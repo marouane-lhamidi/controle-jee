@@ -1,0 +1,38 @@
+<div class="modal-content w-100">
+  <div class="modal-body p-4">
+    <form [formGroup]="editProductFormGroup" (ngSubmit)="handelEditProduct()">
+      <div class="mb-6">
+        <div class="mb-3">
+          <label class="form-label">Id</label>
+          <input type="text" formControlName="id" class="form-control" readonly>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" formControlName="name" class="form-control">
+          <small *ngIf="editProductFormGroup.controls['name'].errors && editProductFormGroup.controls['name'].touched" class="text-danger">
+            {{getErrorMessage('Name', editProductFormGroup.controls['name'].errors)}}
+          </small>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Price</label>
+          <input type="text" formControlName="price" class="form-control">
+          <small *ngIf="editProductFormGroup.controls['price'].errors && editProductFormGroup.controls['price'].touched" class="text-danger">
+            {{getErrorMessage('Price', editProductFormGroup.controls['price'].errors)}}
+          </small>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Quantity</label>
+          <input type="text" formControlName="quantity" class="form-control">
+          <small *ngIf="editProductFormGroup.controls['quantity'].errors && editProductFormGroup.controls['quantity'].touched" class="text-danger">
+            {{getErrorMessage('Quantity', editProductFormGroup.controls['quantity'].errors)}}
+          </small>
+        </div>
+        <!-- Submit button -->
+        <button [disabled]="!editProductFormGroup.valid" class="btn btn-outline-info" type="submit" >
+          Save Product
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Modal -->

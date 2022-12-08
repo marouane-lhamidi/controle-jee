@@ -1,0 +1,60 @@
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Products</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+        <li class="breadcrumb-item active">Products</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+
+  <section class="section">
+    <div class="row">
+      <div class="table-responsive">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-8"><h2>Products <b>Details</b></h2></div>
+              <div class="col-sm-4" >
+                <button type="button" class="btn btn-info add-new" (click)="openAddProduct()">
+                  <i class="bi bi-plus"></i>
+                  Add New
+                </button>
+              </div>
+            </div>
+          </div>
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of products; let i= index">
+                <td>{{ i+1 }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.price + " Dh" }}</td>
+                <td>
+                  <a (click)="openEditModal(p)" class="edit" >
+                    <i class="bi bi-pen-fill"></i>
+                  </a>
+                  <a  (click)="handleProductDelete(p)" class="delete" >
+                    <i class="bi bi-trash"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
