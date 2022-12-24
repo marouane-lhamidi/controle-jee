@@ -53,7 +53,7 @@
 
 4. Creation of the Eureka Discovery Service directory
      - Code Demo
-![Code Demonstration](/assets/Eureka1.png)
+![Code Demonstration](/assets/Eureka2.png)
 
 5. The dynamic configuration of gateway routes
      - Code Demo
