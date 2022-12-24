@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 import {Product} from "../../../model/Product.model";
 import {FormBuilder, FormGroup, ValidationErrors, Validators} from "@angular/forms";
-import {ProductService} from "../../../services/product.service";
+import {ProductService} from "../../../services/product/product.service";
 import {Router} from "@angular/router";
 
 @Component({

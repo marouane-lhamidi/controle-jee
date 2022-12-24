@@ -1,68 +1,60 @@
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Customer</h1>
+    <h1>Products</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a routerLink="">Home</a></li>
-        <li class="breadcrumb-item active">Customer</li>
+        <li class="breadcrumb-item active">Customers</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
 
 
-
-
   <section class="section">
     <div class="row">
-      <div>
-
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Customers</h5>
-
-            <!-- Default Table -->
-            <table class="table">
-              <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Brandon Jacob</td>
-                <td>Designer</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Bridie Kessler</td>
-                <td>Developer</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Ashleigh Langosh</td>
-                <td>Finance</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Angus Grady</td>
-                <td>HR</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Raheem Lehner</td>
-                <td>Dynamic Division Officer</td>
-              </tr>
-              </tbody>
-            </table>
-            <!-- End Default Table Example -->
+      <div class="table-responsive">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-8"><h2>Customers <b>Details</b></h2></div>
+              <div class="col-sm-4" >
+                <button type="button" class="btn btn-info add-new" (click)="openAddCustomer()">
+                  <i class="bi bi-plus"></i>
+                  Add New
+                </button>
+              </div>
+            </div>
           </div>
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let c of customers">
+              <td>{{ c.id }}</td>
+              <td>{{ c.name }}</td>
+              <td>{{ c.email }}</td>
+              <td>
+                <a (click)="openEditModal(c)" class="edit" >
+                  <i class="bi bi-pen-fill"></i>
+                </a>
+                <a  (click)="handleCustomerDelete(c)" class="delete" >
+                  <i class="bi bi-trash"></i>
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+
   </section>
 
 </main>

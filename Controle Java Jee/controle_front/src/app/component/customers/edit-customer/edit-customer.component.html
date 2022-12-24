@@ -1,0 +1,31 @@
+<div class="modal-content w-100">
+  <div class="modal-body p-4">
+    <form [formGroup]="editCustomerFormGroup" (ngSubmit)="handelEditCustomer()">
+      <div class="mb-6">
+        <div class="mb-3">
+          <label class="form-label">Id</label>
+          <input type="text" formControlName="id" class="form-control" readonly>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" formControlName="name" class="form-control">
+          <small *ngIf="editCustomerFormGroup.controls['name'].errors && editCustomerFormGroup.controls['name'].touched" class="text-danger">
+            {{getErrorMessage('Name', editCustomerFormGroup.controls['name'].errors)}}
+          </small>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="text" formControlName="email" class="form-control">
+          <small *ngIf="editCustomerFormGroup.controls['email'].errors && editCustomerFormGroup.controls['email'].touched" class="text-danger">
+            {{getErrorMessage('Email', editCustomerFormGroup.controls['email'].errors)}}
+          </small>
+        </div>
+        <!-- Submit button -->
+        <button [disabled]="!editCustomerFormGroup.valid" class="btn btn-outline-info" type="submit" >
+          Save Customer
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Modal -->

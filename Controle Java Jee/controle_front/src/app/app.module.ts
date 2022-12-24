@@ -13,6 +13,10 @@ import { EditProductComponent } from './component/products/edit-product/edit-pro
 import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewCustomerComponent } from './component/customers/new-customer/new-customer.component';
+import { EditCustomerComponent } from './component/customers/edit-customer/edit-customer.component';
+import { BillsComponent } from './component/bills/bills.component';
+import { BillInformationComponent } from './component/bills/bill-information/bill-information.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'
     ProductsComponent,
     CustomersComponent,
     NewProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    NewCustomerComponent,
+    EditCustomerComponent,
+    BillsComponent,
+    BillInformationComponent
   ],
   imports: [
     BrowserModule,

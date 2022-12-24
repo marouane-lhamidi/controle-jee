@@ -1,0 +1,62 @@
+<div class="card-body w-100">
+  <div class="container mb-5 mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8">
+          <ul class="list-unstyled">
+            <li class="text-muted">To: <span style="color:#4154f1 ;">{{ bill.customer.name }}</span></li>
+            <li class="text-muted">Street, City</li>
+            <li class="text-muted">State, Country</li>
+            <li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
+          </ul>
+        </div>
+        <div class="col-xl-4">
+          <p class="text-muted">Invoice</p>
+          <ul class="list-unstyled">
+            <li class="text-muted"><i class="fas fa-circle"></i> <span
+              class="fw-bold">ID:</span>#{{ bill.id }}</li>
+            <li class="text-muted"><i class="fas fa-circle"></i> <span
+              class="fw-bold">Creation Date: </span>{{bill.billingDate | date: 'dd/MM/yy, à HH:mm'}}</li>
+            <li class="text-muted"><i class="fas fa-circle"></i> <span
+              class="me-1 fw-bold">Status:</span><span class="badge bg-success-light text-black fw-bold">
+                  Paid</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row my-2 mx-1 justify-content-center">
+        <table class="table table-striped table-borderless">
+          <thead style="background-color:#4154f1 ;" class="text-white">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Amount</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of bill.productItems; let i = index">
+              <th scope="row">{{ i+1 }}</th>
+              <td>{{ p.product.name }}</td>
+              <td>{{ p.quantity }}</td>
+              <td>{{ p.product.price }} <b>Dh</b></td>
+              <td>{{ p.price }} <b>Dh</b></td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-xl-8">
+        </div>
+        <div class="col-xl-4">
+          <p class="text-black float-start"><span class="text-black me-3"> Total Amount</span><span
+            style="font-size: 20px;">{{ bill.totalToPay }} <b>Dh</b></span></p>
+        </div>
+      </div>
+      <hr>
+
+    </div>
+  </div>
+</div>

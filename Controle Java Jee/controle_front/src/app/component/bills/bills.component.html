@@ -1,0 +1,47 @@
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Bills</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+        <li class="breadcrumb-item active">Bills</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+
+  <section class="section">
+    <div class="row">
+      <div class="table-responsive">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-8"><h2> <b>Bills</b></h2></div>
+            </div>
+          </div>
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Payed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let b of bills; let i= index" class="billInfo" (click)="openInformationModal(b)">
+              <td>{{ b.id }}</td>
+              <td>{{ b.customer.name }}</td>
+              <td>{{ b.billingDate | date: 'dd/MM/yy, à HH:mm'}}</td>
+              <td>{{ b.totalToPay}} <b>Dh</b></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>

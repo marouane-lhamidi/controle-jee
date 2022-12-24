@@ -499,7 +499,9 @@ table.table td .add {
   min-width: 360px;
   padding: 0 20px;
 }
-
+.billInfo{
+  cursor: pointer;
+}
 @media (max-width: 1199px) {
   .header .search-bar {
     position: fixed;
