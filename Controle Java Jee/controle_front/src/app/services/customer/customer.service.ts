@@ -16,24 +16,24 @@ export class CustomerService {
 
 
   public getCustomers() : Observable<Customer[]>{
-    return this.http.get<Customer[]>("http://localhost:8085/customers");
+    return this.http.get<Customer[]>("http://localhost:8081/customers");
 
   }
 
   public handleCustomerDelete(id: number) : Observable<void>{
 
-    return this.http.delete<void>("http://localhost:8085/customers/"+id);
+    return this.http.delete<void>("http://localhost:8081/customers/"+id);
 
   }
 
   addNewCustomer(customer: Customer): Observable<Customer> {
     customer.id= 0;
-    return this.http.post<Customer>("http://localhost:8085/customers", customer);
+    return this.http.post<Customer>("http://localhost:8081/customers", customer);
 
   }
   editNewCustomer(customer: Customer): Observable<Customer> {
     console.log(customer)
-    return this.http.put<Customer>("http://localhost:8085/customers/" + customer.id, customer);
+    return this.http.put<Customer>("http://localhost:8081/customers/" + customer.id, customer);
 
   }
 }

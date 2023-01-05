@@ -17,7 +17,7 @@ export class BillService {
 
 
   public getBills() : Observable<Bill[]>{
-    return this.http.get<Bill[]>("http://localhost:8086/fullBills");
+    return this.http.get<Bill[]>("http://localhost:8083/fullBills");
 
   }
 

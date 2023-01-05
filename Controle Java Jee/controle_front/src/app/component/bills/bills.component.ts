@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {BillService} from "../../services/bill/bill.service";
 import {AuthenticationService} from "../../services/authentication/authentication.service";
 import {Bill} from "../../model/Bill.model";
-import {EditCustomerComponent} from "../customers/edit-customer/edit-customer.component";
 import {BillInformationComponent} from "./bill-information/bill-information.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +17,25 @@ import { NewCustomerComponent } from './component/customers/new-customer/new-cus
 import { EditCustomerComponent } from './component/customers/edit-customer/edit-customer.component';
 import { BillsComponent } from './component/bills/bills.component';
 import { BillInformationComponent } from './component/bills/bill-information/bill-information.component';
+import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
 
+
+
+export function kcFactory(kcService: KeycloakService){
+  return () => {
+    kcService.init({
+      config: {
+        realm: "control-realm",
+        url: "http://localhost:8080",
+        clientId: "e-commerce-client"
+      },
+      initOptions: {
+        onLoad: "login-required",
+        checkLoginIframe: true
+      }
+    })
+  }
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,9 +58,12 @@ import { BillInformationComponent } from './component/bills/bill-information/bil
     NgbModule,
     FormsModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    KeycloakAngularModule
   ],
-  providers: [],
+  providers: [
+    {provide: APP_INITIALIZER, deps: [KeycloakService], useFactory: kcFactory, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
