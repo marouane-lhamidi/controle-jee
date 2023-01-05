@@ -95,19 +95,19 @@
 
 9. Deploy keycloak server :
      - Create a Realm.
-![Code Demonstration](keycloakRealm.png)
+![Code Demonstration](/assets/keycloakRealm.png)
 
      - Create a client to secure.
-![Code Demonstration](KeycloakClient.png)
+![Code Demonstration](/assets/KeycloakClient.png)
 
      - Creation des utilisateurs.
-![Code Demonstration](keycloakUsers.png)
+![Code Demonstration](/assets/keycloakUsers.png)
 
      - Creation of users.
-![Code Demonstration](keycloakRealm.png)
+![Code Demonstration](/assets/keycloakRealm.png)
 
      - Assign roles to users and setting password.
-![Code Demonstration](RolesPassword.png)
+![Code Demonstration](/assets/RolesPassword.png)
 
 10. Testing With Postman.
 
